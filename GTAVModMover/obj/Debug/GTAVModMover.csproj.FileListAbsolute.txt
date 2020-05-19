@@ -1,0 +1,9 @@
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\bin\Debug\GTAVModMover.exe
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\bin\Debug\GTAVModMover.pdb
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.csprojResolveAssemblyReference.cache
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.Form1.resources
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.Properties.Resources.resources
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.csproj.GenerateResource.Cache
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.exe
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.pdb
+c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\bin\Debug\GTAVModMover.exe.config
