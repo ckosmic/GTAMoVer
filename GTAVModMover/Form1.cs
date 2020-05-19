@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -72,6 +73,7 @@ namespace GTAVModMover {
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
+
 			if (Properties.Settings.Default.basePath == "") {
 				chooseGameDirectory();
 			} else {
@@ -83,6 +85,7 @@ namespace GTAVModMover {
 				changeModsDirectory(Properties.Settings.Default.modsPath);
 			}
 
+			whitelist.Add("_CommonRedist");
 			whitelist.Add("Installers");
 			whitelist.Add("update");
 			whitelist.Add("x64");
@@ -110,6 +113,8 @@ namespace GTAVModMover {
 			} else {
 				reloadWindow();
 			}
+
+			checkForUpdates();
 		}
 
 		private int modsDetected() {
@@ -228,6 +233,17 @@ namespace GTAVModMover {
 			if (e.KeyChar == (char)Keys.Return) {
 				changeModsDirectory(textBox2.Text);
 				reloadWindow();
+			}
+		}
+
+		private void checkForUpdates() {
+			//https://raw.githubusercontent.com/ckosmic/GTAMoVer/master/GTAVModMover/Form1.cs
+			//https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/bin/Debug/GTAVModMover.exe
+			using (WebClient client = new WebClient()) {
+				string src = client.DownloadString("https://raw.githubusercontent.com/ckosmic/GTAMoVer/master/GTAVModMover/Properties/AssemblyInfo.cs");
+				int index = src.IndexOf("[assembly: AssemblyVersion(");
+				int stop = src.IndexOf("[assembly: AssemblyFileVersion(");
+				ConsolePrint(src.Substring(index, stop - index));
 			}
 		}
 	}
