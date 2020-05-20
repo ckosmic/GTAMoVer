@@ -24,7 +24,7 @@ namespace GTAVModMover {
 			using (WebClient client = new WebClient()) {
 				ServicePointManager.SecurityProtocol = (SecurityProtocolType)((SslProtocols)0x00000C00);
 				client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/bin/Debug/GTAVModMover.exe", "GTAVModMoverUpdated.exe");
-				client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/bin/Debug/GTAMoVerUpdater.exe", "GTAMoVerUpdater.exe");
+				client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/GTAMoVerUpdater.exe", "GTAMoVerUpdater.exe");
 				Program.enableMods();
 				Process proc = new Process();
 				proc.StartInfo.FileName = "GTAMoVerUpdater.exe";
@@ -49,6 +49,10 @@ namespace GTAVModMover {
 		}
 
 		private void label3_Click(object sender, EventArgs e) {
+
+		}
+
+		private void label2_Click(object sender, EventArgs e) {
 
 		}
 	}
