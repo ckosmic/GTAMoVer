@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Security.Authentication;
 using System.Diagnostics;
+using System.Threading;
 
 namespace GTAVModMover {
 	public partial class Form2 : Form {
@@ -24,7 +25,8 @@ namespace GTAVModMover {
 			using (WebClient client = new WebClient()) {
 				ServicePointManager.SecurityProtocol = (SecurityProtocolType)((SslProtocols)0x00000C00);
 				client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/bin/Debug/GTAVModMover.exe", "GTAVModMoverUpdated.exe");
-				client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/GTAMoVerUpdater.exe", "GTAMoVerUpdater.exe");
+				//client.DownloadFile("https://github.com/ckosmic/GTAMoVer/raw/master/GTAVModMover/GTAMoVerUpdater.exe", "GTAMoVerUpdater.exe");
+				Thread.Sleep(1000);
 				Program.enableMods();
 				Process proc = new Process();
 				proc.StartInfo.FileName = "GTAMoVerUpdater.exe";

@@ -6,12 +6,10 @@ using System.Windows.Forms;
 
 namespace GTAVModMover {
 	static class Program {
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		/// 
 
+		// Game directory
 		public static string basePath = "";
+		// Folder that mods get moved into
 		public static string backupPath = "";
 		public static Form1 f1;
 
@@ -26,6 +24,8 @@ namespace GTAVModMover {
 				Properties.Settings.Default.basePath = basePath;
 			if(backupPath != "")
 				Properties.Settings.Default.modsPath = backupPath;
+
+			File.Delete("GTAMoVerUpdater.exe");
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

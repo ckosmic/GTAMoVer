@@ -83,7 +83,7 @@ namespace GTAVModMover {
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(220, 26);
 			this.label3.TabIndex = 4;
-			this.label3.Text = "Noter: Updating will move disabled\r\nmods to the game folder.";
+			this.label3.Text = "Note: Updating will move disabled\r\nmods to the game folder.";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.label3.Click += new System.EventHandler(this.label3_Click);
 			// 

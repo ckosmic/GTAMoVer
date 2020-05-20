@@ -169,7 +169,7 @@ namespace GTAVModMover {
 				int stop = src.IndexOf("\")]\n[assembly: AssemblyFileVersion(");
 				Version onlineVersion = new Version(src.Substring(index, stop - index));
 				Version version = new Version(Application.ProductVersion);
-				if (onlineVersion == version) {
+				if (onlineVersion > version) {
 					Program.ConsolePrint("A new version (" + onlineVersion + ") is available.");
 					Form2 f2 = new Form2();
 					f2.ShowDialog();
