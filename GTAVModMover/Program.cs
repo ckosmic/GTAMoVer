@@ -11,14 +11,16 @@ namespace GTAVModMover {
 		/// </summary>
 		/// 
 
-		public static string basePath;
-		public static string backupPath;
+		public static string basePath = "";
+		public static string backupPath = "";
 		public static Form1 f1;
 
 		[STAThread]
 		static void Main() {
-			basePath = Environment.GetCommandLineArgs()[1];
-			backupPath = Environment.GetCommandLineArgs()[2];
+			if (Environment.GetCommandLineArgs().Length > 1) {
+				basePath = Environment.GetCommandLineArgs()[1];
+				backupPath = Environment.GetCommandLineArgs()[2];
+			}
 
 			if(basePath != "")
 				Properties.Settings.Default.basePath = basePath;
