@@ -7,3 +7,4 @@ c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMov
 c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.exe
 c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.pdb
 c:\users\christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\bin\Debug\GTAVModMover.exe.config
+C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.Form2.resources
