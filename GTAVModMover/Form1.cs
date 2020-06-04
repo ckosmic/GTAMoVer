@@ -67,6 +67,13 @@ namespace GTAVModMover {
 			whitelist.Add("Installers");
 			whitelist.Add("update");
 			whitelist.Add("x64");
+			whitelist.Add("Redistributables");
+			whitelist.Add(".egstore");
+			whitelist.Add("ReadMe");
+			whitelist.Add("EOSSDK-Win64-Shipping.dll");
+			whitelist.Add("GPUPerfAPIDX11-x64.dll");
+			whitelist.Add("NvPmApi.Core.win64.dll");
+			whitelist.Add("version.txt");
 			whitelist.Add("bink2w64.dll");
 			whitelist.Add("commandline.txt");
 			whitelist.Add("common.rpf");
@@ -117,6 +124,18 @@ namespace GTAVModMover {
 						detected++;
 					}
 				}
+
+				dir = new DirectoryInfo(Path.Combine(Program.basePath, "update/x64/dlcpacks"));
+				dirs.Clear();
+				foreach (DirectoryInfo d in dir.GetDirectories("*")) {
+					dirs.Add(d);
+				}
+				foreach (DirectoryInfo d in dirs) {
+					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday"))) {
+						detected++;
+					}
+				}
+
 				return detected;
 			}
 			return -1;

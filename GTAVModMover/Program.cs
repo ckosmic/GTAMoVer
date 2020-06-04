@@ -89,6 +89,22 @@ namespace GTAVModMover {
 						Directory.Move(d.FullName, dest);
 					}
 				}
+
+				dir = new DirectoryInfo(Path.Combine(basePath, "update/x64/dlcpacks"));
+				dirs.Clear();
+				foreach (DirectoryInfo d in dir.GetDirectories("*")) {
+					dirs.Add(d);
+				}
+				foreach (DirectoryInfo d in dirs) {
+					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday"))) {
+						if (!Directory.Exists(Path.Combine(backupPath, "update/x64/dlcpacks")))
+							Directory.CreateDirectory(Path.Combine(backupPath, "update/x64/dlcpacks"));
+						ConsolePrint("Moving dlcpacks directory '" + d.Name + "' to moved mods directory.");
+						string dest = Path.Combine(backupPath, Path.Combine("update/x64/dlcpacks", d.Name));
+						Directory.Move(d.FullName, dest);
+					}
+				}
+
 				f1.reloadWindow();
 				ConsolePrint("--Disabling operation completed--");
 			} else {
@@ -106,9 +122,19 @@ namespace GTAVModMover {
 					File.Move(f.FullName, dest);
 				}
 				foreach (DirectoryInfo d in dir.GetDirectories("*")) {
-					string dest = Path.Combine(basePath, d.Name);
-					ConsolePrint("Moving directory '" + d.Name + "' to game directory.");
-					Directory.Move(d.FullName, dest);
+					if (d.Name != "update") {
+						string dest = Path.Combine(basePath, d.Name);
+						ConsolePrint("Moving directory '" + d.Name + "' to game directory.");
+						Directory.Move(d.FullName, dest);
+					} else {
+						DirectoryInfo dlcDir = new DirectoryInfo(Path.Combine(backupPath, "update/x64/dlcpacks"));
+						foreach (DirectoryInfo c in dlcDir.GetDirectories("*")) {
+							string dest = Path.Combine(basePath, Path.Combine("update/x64/dlcpacks", c.Name));
+							ConsolePrint("Moving dlcpacks directory '" + c.Name + "' to game directory.");
+							Directory.Move(c.FullName, dest);
+						}
+						Directory.Delete(d.FullName, true);
+					}
 				}
 				f1.reloadWindow();
 				ConsolePrint("--Enabling operation completed--");

@@ -7,3 +7,4 @@ C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMov
 C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.csproj.GenerateResource.Cache
 C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.exe
 C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.pdb
+C:\Users\Christian\documents\visual studio 2017\Projects\GTAVModMover\GTAVModMover\obj\Debug\GTAVModMover.csprojResolveAssemblyReference.cache
